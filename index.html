@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Make a Dollhouse — The Makers Edit</title>
+<meta name="description" content="A beginner-friendly guide to cutting, assembling and furnishing a cardboard dollhouse.">
+<style>
+  /* Fonts used by the original Canva page: Aptos (all text) and Calibri (logo) */
+  @font-face{font-family:"Aptos Web";src:local("Aptos"),url(fonts/aptos-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:"Aptos Web";src:local("Aptos Bold"),local("Aptos-Bold"),url(fonts/aptos-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
+
+  :root{
+    --green:#254436;
+    --green-dark:#1d362b;
+    --green-text:#315b48;
+    --ink:#252a26;
+    --muted:#686e66;
+    --beige:#f4f5f0;
+    --accent:#c36e4d;
+    --note-bg:#f8f4ea;
+    --line:#d9dcd5;
+    --wrap:1314px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  /* Canva renders text with kerning off and zero letter-spacing */
+  body{margin:0;font-family:"Aptos Web",Aptos,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.2;letter-spacing:0;font-kerning:none;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .pre{white-space:pre-wrap}
+  .justify{text-align:justify}
+
+  /* ---------- Header ---------- */
+  .site-header{background:var(--green);color:#fff}
+  .site-header .wrap{display:flex;align-items:center;gap:16px;height:85px;max-width:1440px;padding:0 44px}
+  .icon-btn{background:none;border:0;color:inherit;cursor:pointer;padding:8px;display:inline-flex;border-radius:4px}
+  .icon-btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible+.box{outline:2px solid var(--accent);outline-offset:2px}
+  .brand{font-family:Calibri,"Carlito","Segoe UI",sans-serif;font-size:29.6px;line-height:35px;text-decoration:none;white-space:pre;font-weight:400;margin-left:-6px}
+  .top-nav{flex:1;margin-left:30px;white-space:pre;font-size:14.04px;line-height:16px;font-weight:700;text-transform:uppercase}
+  .top-nav a{text-decoration:none}
+  .top-nav a:hover{text-decoration:underline}
+  .drawer{display:none;background:var(--green-dark)}
+  .drawer.open{display:block}
+  .drawer ul{list-style:none;margin:0 auto;padding:12px 24px 18px;max-width:var(--wrap);display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px 24px}
+  .drawer a{color:#fff;text-decoration:none;font-weight:700;font-size:14.04px;text-transform:uppercase;display:block;padding:6px 0}
+
+  /* ---------- Hero ---------- */
+  .crumbs{padding:36px 0 0;font-size:16.7px;line-height:20px;font-weight:700;color:var(--muted);text-transform:uppercase;white-space:pre-wrap}
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) 655px;gap:94px;align-items:start;padding:42px 0 50px}
+  .kicker{font-size:14.04px;line-height:16px;font-weight:700;color:var(--green-text);text-transform:uppercase;margin:0 0 14px 3px;white-space:pre-wrap}
+  h1{font-size:48px;line-height:57px;margin:0 0 15px;font-weight:700;color:var(--ink)}
+  .lead{color:var(--muted);font-size:18.67px;line-height:28px;margin:0 0 30px 1px;max-width:503px;text-align:justify}
+  .btn-row{display:flex;gap:26px;flex-wrap:wrap;margin:0 0 16px 3px}
+  .btn{display:inline-block;padding:16px 26px;border-radius:2px;font-weight:700;font-size:16.13px;line-height:19px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn-primary{background:var(--green);color:#f6f7f3}
+  .btn-primary:hover{background:var(--green-dark)}
+  .btn-light{background:#eaf0ea;color:var(--green)}
+  .btn-light:hover{background:#dfe7df}
+  .byline{display:flex;align-items:center;gap:12px;font-size:16.04px;line-height:19px;color:var(--muted);margin-left:3px}
+  .byline .pre{white-space:pre-wrap}
+  .avatar{width:38px;height:38px;border-radius:50%;background:#f1f3ee;border:1px solid #e3e6df;display:grid;place-items:center;font-weight:400;color:var(--muted);font-size:16.04px}
+  .byline strong{color:var(--muted);font-weight:700}
+  .hero-fig{position:relative;margin:0;overflow:hidden}
+  .hero-fig img{width:100%;aspect-ratio:655/376;object-fit:cover}
+  .hero-fig figcaption{position:absolute;left:14px;bottom:10px;font-size:14.04px;line-height:16px;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;white-space:pre-wrap}
+
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);background:var(--beige);margin:0 0 60px}
+  .fact{padding:20px 15px 25px;border-left:2px solid var(--green)}
+  .fact:first-child{border-left:0}
+  .fact b{display:block;font-size:18.67px;line-height:22px;color:var(--green);text-transform:uppercase;margin-bottom:9px}
+  .fact span{font-size:18.67px;line-height:22px;color:var(--muted);white-space:pre-wrap}
+
+  /* ---------- Two-column body ---------- */
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:62px;align-items:start}
+  /* the whole right-hand bar follows the reader */
+  /* sizes shrink with the window height (vh) so the whole sticky bar fits on screen */
+  .rail{position:sticky;top:clamp(10px,2vh,20px);display:flex;flex-direction:column;gap:clamp(10px,2.4vh,34px);max-height:calc(100vh - 2*clamp(10px,2vh,20px));overflow-y:auto;scrollbar-width:none;align-self:start}
+  .rail::-webkit-scrollbar{display:none}
+  .panel{background:var(--beige);padding:clamp(14px,2.4vh,26px) 18px clamp(14px,2.6vh,30px) 20px}
+  .progress-head{display:flex;justify-content:space-between;align-items:baseline}
+  .progress-head h3,.panel h4{margin:0;font-size:clamp(17px,2.2vh,21.33px);line-height:1.2;font-weight:700;text-transform:uppercase;color:var(--green)}
+  .progress-head span{font-weight:700;color:var(--muted);font-size:clamp(15px,1.9vh,18.67px);line-height:1.2}
+  .bar{height:5px;background:#dfe3da;margin:clamp(8px,1.8vh,20px) 0 clamp(10px,2.4vh,26px);border-radius:3px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
+  .panel h4{margin-bottom:clamp(8px,1.8vh,20px)}
+  .steps-nav{list-style:none;margin:0;padding:0;display:grid;gap:clamp(3px,1.3vh,26px)}
+  .steps-nav a{display:flex;align-items:center;gap:10px;padding:0 2px;text-decoration:none;font-weight:700;font-size:clamp(15px,2.1vh,21.33px);line-height:1.2;color:var(--green);border-radius:4px}
+  .steps-nav a:hover{background:rgba(37,68,54,.07)}
+  .steps-nav .n{flex:none;width:clamp(26px,3.9vh,40px);height:clamp(26px,3.9vh,40px);border-radius:50%;border:2px solid var(--green);display:grid;place-items:center;font-size:clamp(12px,1.6vh,16.04px);line-height:1;color:var(--muted);transition:.2s}
+  .steps-nav a.active{background:rgba(37,68,54,.09)}
+  .steps-nav a.active .n{background:rgba(37,68,54,.15)}
+  .steps-nav a.done .n{background:var(--green);color:#fff;border-color:var(--green)}
+  .cta{background:var(--green);color:#fff;padding:22px 22px 27px}
+  .cta h4{color:#fff;font-size:33.33px;line-height:39px;font-weight:400;margin:0 0 16px}
+  .cta p{margin:0 0 20px;font-size:18.67px;line-height:28px;color:#d9d9d9;max-width:320px}
+  .cta .btn{display:block;text-align:center;background:#edf2ed;color:var(--green);width:100%;font-size:21.33px;line-height:25px;padding:17px 20px;text-transform:uppercase;border-radius:3px}
+  .cta .btn:hover{background:#fff}
+  /* short windows: compact "Ready to make?" card */
+  @media (max-height:900px){
+    .cta{padding:14px 18px 16px}
+    .cta h4{font-size:24px;line-height:29px;margin-bottom:10px}
+    .cta p{display:none}
+    .cta .btn{font-size:17px;line-height:20px;padding:11px 16px}
+  }
+
+  /* ---------- Content ---------- */
+  h2.big{font-size:37.33px;line-height:44px;margin:0 0 8px 2px;font-weight:700;text-transform:uppercase;color:#000}
+  .body-text{color:var(--muted);font-size:21.33px;line-height:31px;margin:0 0 23px 4px;text-align:justify}
+  .callout{background:var(--note-bg);border-left:3px solid var(--accent);padding:18px 30px 25px 14px;font-size:17.33px;line-height:25px;margin:0 0 60px 4px;text-align:justify;color:var(--ink)}
+  .callout strong{font-weight:700}
+  .eyebrow{font-size:18.67px;line-height:22px;font-weight:700;color:var(--accent);text-transform:uppercase;margin:0 0 15px 4px}
+  h2.sec{font-size:37.33px;line-height:44px;margin:0 0 6px 4px;font-weight:700;color:var(--ink)}
+  .sub{color:var(--muted);margin:0 0 22px 4px;font-size:18.67px;line-height:22px}
+  section.block{margin:0 0 64px;scroll-margin-top:24px}
+  [id]{scroll-margin-top:24px}
+  .block-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;flex-wrap:wrap}
+
+  .check-grid{display:grid;grid-template-columns:378px 378px;gap:17px 17px;margin-left:4px}
+  .check{display:flex;align-items:center;gap:20px;background:var(--beige);padding:16px 18px;min-height:58px;cursor:pointer;font-size:21.33px;line-height:25px;color:#000;user-select:none}
+  .check input{position:absolute;opacity:0;pointer-events:none}
+  .check .box{flex:none;width:18px;height:18px;border:1.5px solid #4a4f4b;display:grid;place-items:center;background:transparent}
+  .check .box svg{width:13px;height:13px;opacity:0;stroke:#fff}
+  .check input:checked+.box{background:var(--green);border-color:var(--green)}
+  .check input:checked+.box svg{opacity:1}
+  .check input:checked~.t{text-decoration:line-through;color:var(--muted)}
+
+  .done-btn{background:none;border:1.5px solid var(--green);color:var(--green);font:400 14px/1 inherit;font-family:inherit;padding:8px 12px;border-radius:20px;cursor:pointer;white-space:nowrap}
+  .done-btn[aria-pressed="true"]{background:var(--green);color:#fff}
+  .done-btn:hover{background:rgba(37,68,54,.08)}
+  .done-btn[aria-pressed="true"]:hover{background:var(--green-dark)}
+
+  .card{background:var(--beige);border-radius:14px;padding:22px 22px 26px 22px;margin:0 0 22px}
+  .card-head{display:flex;align-items:center;gap:24px;margin-bottom:6px}
+  .badge{background:#2d5a48;color:#fff;font-weight:700;width:54px;height:54px;border-radius:2px;display:grid;place-items:center;font-size:18.67px;line-height:22px;flex:none}
+  .card h3{margin:0;font-size:26.67px;line-height:31px;font-weight:700;flex:1;color:var(--ink)}
+  .card p{margin:0 0 12px;font-size:18.67px;line-height:22px;color:var(--muted);text-align:justify}
+  .card .indent{margin-left:78px}
+  #print{padding:22px 18px 30px 34px}
+  #print .card-head{gap:24px;margin-bottom:0}
+  .split{display:grid;grid-template-columns:144px minmax(0,1fr);gap:30px;align-items:start}
+  .split p{text-align:justify;margin-top:10px}
+  .split img{border:1px solid #888;background:#fff}
+  #decor h3{font-size:21.33px;line-height:25px}
+  .tip{background:var(--note-bg);border-left:3px solid var(--accent);padding:14px 20px 18px 20px;font-size:17.33px;line-height:20px;margin:14px 0 0;color:#000;text-align:justify}
+  .tip b{color:#000}
+
+  /* Step cards: column widths and image crops are taken from the original Canva layout,
+     so every justified line breaks (and spaces its words) exactly like the original. */
+  .step{--pl:19px;--pt:28px;--pr:37px;--pb:40px;--g:18px;--tw:208px;--tt:0px;--ft:0px;--fw:405px;
+    position:relative;background:var(--green);color:#edf2ed;max-width:781px;margin:0 0 34px;
+    padding:var(--pt) var(--pr) var(--pb) var(--pl);
+    display:grid;grid-template-columns:54px var(--tw) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:var(--g);align-items:start;
+    grid-template-areas:"badge title frame" "side text frame"}
+  .step .badge{grid-area:badge;background:#edf2ed;color:var(--ink);border:0;border-radius:2px;width:54px;height:54px;font-size:18.67px}
+  .step.is-done .badge{background:#9fc4a8}
+  .step h3{grid-area:title;margin:var(--tt) 0 0;font-size:26.67px;line-height:31px;font-weight:700;color:#f6f7f3;white-space:nowrap}
+  .step p{grid-area:text;margin:var(--tg,23px) 0 0;font-size:20px;line-height:30px;color:#edf2ed;text-align:justify}
+  .step .mini{grid-area:side;justify-self:center;margin-top:14px;width:34px;height:34px;padding:0;border-radius:50%;border:1.5px solid rgba(237,242,237,.6);color:#edf2ed;font-size:16px;line-height:1;display:grid;place-items:center}
+  .step .mini:hover{background:rgba(237,242,237,.12)}
+  .step .mini[aria-pressed="true"]{background:#edf2ed;color:var(--green);border-color:#edf2ed}
+  .frame{grid-area:frame;justify-self:end;position:relative;overflow:hidden;background:#fff;width:var(--fw);max-width:100%;margin-top:var(--ft)}
+  .frame img{position:absolute;max-width:none;height:auto;display:block}
+  .frame .note{position:absolute;margin:0;font-size:13.33px;line-height:19px;color:var(--green);text-align:justify}
+  .frames{grid-area:frame;display:flex;gap:21px;margin-top:29px}
+  .frames .frame{margin:0;flex:none;max-width:none}
+  /* per-step geometry (px from the original page at 1440px) */
+  #step-1{--pl:23px;--pt:38px;--pr:34px;--pb:46px;--g:20px;--tw:173px;--tt:3px;--fw:361px}
+  #step-1 p{--tg:5px;font-size:18.67px;line-height:28px}
+  #step-3 p{--tg:1px}
+  #step-1 .frame{aspect-ratio:361.4/355.7}
+  #step-1 .frame img{width:336.33%;left:-8.99%;top:-8.66%}
+  #step-2{--pl:24px;--pt:37px;--pr:40px;--pb:49px;--g:21px;--tw:639px;--tt:-1px;
+    grid-template-areas:"badge title title" "side text text" ". frame frame"}
+  #step-2 p{--tg:-3px}
+  #step-2 .frame:nth-child(1){width:301.7px;aspect-ratio:301.7/254.9}
+  #step-2 .frame:nth-child(1) img{width:342.09%;left:-117.77%;top:-42.53%}
+  #step-2 .frame:nth-child(2){width:318.7px;aspect-ratio:318.7/254.9}
+  #step-2 .frame:nth-child(2) img{width:321.78%;left:-214.03%;top:-63.99%}
+  #step-3{--pl:18px;--pt:33px;--pr:39px;--pb:42px;--g:16px;--tw:243px;--tt:1px;--ft:5px;--fw:339px}
+  #step-3 .frame{aspect-ratio:338.9/409.3}
+  #step-3 .frame img{width:211.66%;left:-18.32%;top:0}
+  #step-3 .note{left:16.73%;top:19.99%;width:16.94%}
+  #step-4{--pl:19px;--pt:28px;--pr:36px;--pb:24px;--g:17px;--tw:208px;--tt:-1px;--ft:90px;--fw:409px;
+    grid-template-areas:"badge title title" "side text frame"}
+  #step-4 p{--tg:-3px}
+  #step-4 .frame{aspect-ratio:409.4/319.7}
+  #step-4 .frame img{width:218.69%;left:-118.69%;top:-12.54%}
+  #step-5{--pl:19px;--pt:30px;--pr:40px;--pb:35px;--g:21px;--tw:208px;--tt:6px;--ft:2px;--fw:406px}
+  #step-5 h3{white-space:normal}
+  #step-5 p{--tg:22px}
+  #step-5 h3{width:205px}
+  #step-5 .frame{aspect-ratio:405.8/489.8}
+  #step-5 .frame img{width:201.8%;left:-20.35%;top:0}
+  #step-6{--pl:19px;--pt:26px;--pr:38px;--pb:49px;--g:19px;--tw:197px;--tt:4px;--ft:44px;--fw:408px}
+  #step-6 p{--tg:-2px}
+  #step-6 .frame{aspect-ratio:407.6/408.6}
+  #step-6 .frame img{width:229.1%;left:-129.1%;top:0}
+  /* in the original, kerning is switched on only for the card / tip / step body texts */
+  .card p,.tip,.step p,.frame .note{font-kerning:normal}
+  #step-2{grid-template-rows:auto auto 1fr}
+  .figure{margin:8px 0 28px}
+  .figure img{width:100%;border:1px solid var(--line);background:#fff}
+  .figure figcaption{font-size:13.33px;line-height:19px;color:var(--green);margin-top:8px}
+
+  .two{display:grid;grid-template-columns:1fr;gap:20px;max-width:777px;margin-left:13px}
+  .two .card{margin:0;border-radius:10px;padding:27px 13px 26px 18px}
+  .two .card:nth-child(1){background:#f7f4ec}
+  .two .card:nth-child(2){background:#edf0ea}
+  .two h3{font-size:18.67px;line-height:22px;text-transform:uppercase;color:var(--ink);margin:0 0 10px;font-weight:700}
+  .two .card:nth-child(2) h3{color:var(--green-text)}
+  #finishing .eyebrow,#finishing h2.sec,#finishing .sub{margin-left:13px}
+  #finishing{margin-bottom:54px}
+
+  /* ---------- Footer ---------- */
+  .site-footer{background:var(--green);color:#fff;padding:22px 0 40px}
+  .site-footer .wrap{max-width:1440px;padding:0 56px 0 79px;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .foot-brand{font-family:Calibri,"Carlito","Segoe UI",sans-serif;font-size:29.6px;line-height:35px;font-weight:400;margin:0 0 4px}
+  .foot-note{margin:0 0 0 2px;font-size:16px;line-height:19px;color:#fff;white-space:pre-wrap}
+  .newsletter{display:block;margin-top:21px;width:309px;padding:15px 0;background:#fff;color:var(--ink);border:2px solid #44605a;text-align:center;text-decoration:none;font:500 13px/15px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;letter-spacing:1.6px;text-transform:uppercase}
+  .foot-links{display:grid;grid-template-columns:164px 182px 145px 110px;padding-top:6px}
+  .foot-links ul{list-style:none;margin:0;padding:0}
+  .foot-links a{text-decoration:none;font-size:16px;line-height:29.7px;display:block}
+  .foot-links a:hover{text-decoration:underline}
+  .foot-links .caps a{font-weight:700;text-transform:uppercase}
+  .foot-links .narrow a{line-height:29.7px}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1300px){
+    .top-nav{white-space:normal;word-spacing:normal}
+    .hero{grid-template-columns:1fr 1fr;gap:48px}
+    .frames .frame{flex:1 1 0;width:auto!important}
+  }
+  @media (max-width:1080px){
+    .top-nav{display:none}
+    .layout{grid-template-columns:1fr}
+    .rail{position:static;max-height:none;overflow:visible;order:-1;margin-bottom:40px}
+    .hero{grid-template-columns:1fr;gap:28px}
+    .facts{grid-template-columns:1fr 1fr}
+    .fact:nth-child(3){border-left:0}
+    .check-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:680px){
+    .site-header .wrap{padding:0 16px}
+    .check-grid{grid-template-columns:1fr}
+    .site-footer .wrap{padding:0 16px}
+    .foot-links{grid-template-columns:1fr 1fr;row-gap:12px}
+    .newsletter{width:100%}
+    .split{grid-template-columns:1fr}
+    .card .indent{margin-left:0}
+    .step[id]{grid-template-columns:54px minmax(0,1fr);grid-template-areas:"badge title" "side text" "frame frame";padding:22px 18px 26px}
+    .step h3{white-space:normal}
+    .step .frame,.step .frames{justify-self:stretch;width:100%;margin-top:22px}
+    .btn-row .btn{flex:1;text-align:center}
+    h1{font-size:38px;line-height:45px}
+    h2.sec,h2.big{font-size:30px;line-height:36px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+  @media print{.rail,.site-header,.drawer{display:none}.layout{display:block}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <a class="brand" href="#">  THE MAKERS EDIT</a>
+    <!-- spaces between links copy the original Canva text exactly -->
+    <nav class="top-nav" aria-label="Main"><a href="#">DIY-Projects</a>           <a href="#">Needlecrafts</a>          <a href="#">Paper Crafts</a>          <a href="#">Hobbies</a>            <a href="#">Kids</a>           <a href="#">By Category</a>         <a href="#">More</a>           <a href="#">About us</a>          <a href="#">Free templates</a></nav>
+    <button class="icon-btn" aria-label="Search">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>
+  </div>
+  <div class="drawer" id="drawer">
+    <ul>
+      <li><a href="#">DIY-Projects</a></li><li><a href="#">Needlecrafts</a></li><li><a href="#">Paper Crafts</a></li><li><a href="#">Hobbies</a></li><li><a href="#">Kids</a></li><li><a href="#">By Category</a></li><li><a href="#">More</a></li><li><a href="#">About us</a></li><li><a href="#">Free templates</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="crumbs">Kids /  Parent’s Guide  /  DIY-Toys</div>
+
+    <section class="hero">
+      <div>
+        <p class="kicker">Paper &amp; Board Crafts  ·  DIY House</p>
+        <h1>How to Make a<br>Dollhouse</h1>
+        <p class="lead">Would you like to take yourself up for a creative challenge? Or surprise your kids with a budget-friendly dream toy? Either way you would accomplish a man’s dream of building a house!</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#instructions">Jump to Instructions</a>
+          <a class="btn btn-light" href="#materials">View materials</a>
+        </div>
+        <div class="byline"><span class="avatar">A</span><span class="pre">By <strong>Kuon Alina</strong>   ·     Updated on November 4, 2026</span></div>
+      </div>
+      <figure class="hero-fig">
+        <img src="images/hero.jpg" width="1678" height="1128" alt="Isometric render of the finished two-storey cardboard dollhouse with a balcony and porch">
+        <figcaption>Sample of completed dollhouse  /  Credit: Kuon Alina</figcaption>
+      </figure>
+    </section>
+
+    <div class="facts">
+      <div class="fact"><b>Difficulty</b><span>Beginner–Intermediate</span></div>
+      <div class="fact"><b>Making time</b><span>40-90 min</span></div>
+      <div class="fact"><b>Approx. scale</b><span>1 : 12</span></div>
+      <div class="fact"><b>Main technique</b><span>Cut and glue</span></div>
+    </div>
+
+    <div class="layout">
+      <article>
+        <section class="block" id="overview">
+          <h2 class="big">Overview</h2>
+          <p class="body-text">This beginner-friendly guide walks you through cutting, assembling and furnishing a dollhouse designed for imaginative play. Using pre-made templates with assembly hints this guide makes a regular dollhouse making process suitable for a child-parent play activity.</p>
+          <div class="callout"><strong>Before you begin:</strong> The dimensions and cut list below are a starter specification. Make a small test joint using your actual board first, since board thickness and compression vary by supplier.</div>
+        </section>
+
+        <section class="block" id="materials">
+          <div class="block-head">
+            <div>
+              <p class="eyebrow">01 / Preparation</p>
+              <h2 class="sec">Materials &amp; tools</h2>
+            </div>
+            <button class="done-btn" data-done="materials" aria-pressed="false">Mark as done</button>
+          </div>
+          <p class="sub">Gather everything before cutting. Tick items off as you prepare your workspace</p>
+          <div class="check-grid" id="materialsList">
+            <!-- items injected below to keep markup short -->
+          </div>
+        </section>
+
+        <section class="block" id="templates">
+          <p class="eyebrow">02 / Downloads</p>
+          <h2 class="sec">Prepare your cutting templates</h2>
+
+          <div class="card" id="print">
+            <div class="card-head"><span class="badge">01</span><h3>Print</h3><button class="done-btn" data-done="print" aria-pressed="false">Mark as done</button></div>
+            <div class="split">
+              <p>Print the dollhouse details’ layouts on an A3 sized paper at 100%. Attach the printout named “Cardboard” to a cardboard sheet with masking tape, make sure the printout’s sides are aligned with the cardboard sheet. Leave the “Decor layout” to the side for now.</p>
+              <img src="images/template-cardboard.png" width="799" height="568" alt="Cardboard cutting layout: roofs, floors, walls, porch and backyard parts with a scale bar" loading="lazy">
+            </div>
+          </div>
+
+          <div class="card" id="cut">
+            <div class="card-head"><span class="badge">02</span><h3>Cut and label the parts</h3><button class="done-btn" data-done="cut" aria-pressed="false">Mark as done</button></div>
+            <p class="indent">Cut out all of the details along the thick black line. Do not cut along the thin line, instead transfer the thin line on the cardboard with a pencil, you will use them as guidance lines during the assembly stage. Mark the name of the details with a pencil as well, to avoid confusion later on.</p>
+            <div class="tip"><b>Note:</b> Each of the printouts has a scale bar at the bottom. If you are unsure whether the layouts have been printed successfully, measure the scale bar with a ruler. If the centimeters on the ruler match those on the paper - you have printed the correct size, if not - adjust the paper size to A3, and make sure the scale is set either to 100% or “Fit to paper”</div>
+            <div class="tip"><b>Cutting tip:</b> Cut with several light passes and keep the blade vertical. Use a fresh blade and a metal ruler.</div>
+          </div>
+
+          <div class="card" id="decor">
+            <div class="card-head"><span class="badge">03</span><h3>Attach the decor</h3><button class="done-btn" data-done="decor" aria-pressed="false">Mark as done</button></div>
+            <p class="indent">Grab the “Decor” printout and using scissors cut out the interior decor prints. Attach each one of them with a stick glue to its corresponding detail.</p>
+          </div>
+          <figure class="figure"><img src="images/template-decor.jpg" width="1599" height="1131" alt="Decor layout: floor, wall and inner-wall patterns to cut out and glue" loading="lazy"></figure>
+        </section>
+
+        <section class="block" id="instructions">
+          <p class="eyebrow">04 / Build the house</p>
+          <h2 class="sec">Step-by-step instructions</h2>
+          <p class="sub">Keep the labelled panels grouped together.</p>
+
+          <div class="step" id="step-1">
+            <span class="badge">01</span><h3>Build the base</h3>
+            <button class="done-btn mini" data-done="step-1" aria-pressed="false" aria-label="Mark step 1 as done">✓</button>
+            <p>Starting from the 1st floor detail, attach the bottom of the back wall with a glue using the guidance lines on the printouts.</p>
+            <div class="frame"><img src="images/assembly-1.jpg" width="1599" height="705" alt="Back wall glued onto the 1st floor detail" loading="lazy"></div>
+          </div>
+          <div class="step" id="step-2">
+            <span class="badge">02</span><h3>Attach the Porch and the Backyard</h3>
+            <button class="done-btn mini" data-done="step-2" aria-pressed="false" aria-label="Mark step 2 as done">✓</button>
+            <p>Then, attach the porch and backyard details. First, place the Backyard 1 and Porch 1 details, spread glue on both bottom and side attached to the back wall. Then place the Backyard 2 and Porch 2 details, spread glue on both the bottom and side attached to adjacent detail.</p>
+            <div class="frames">
+              <div class="frame"><img src="images/assembly-1.jpg" width="1599" height="705" alt="Backyard 1 and Porch 1 glued to the back wall" loading="lazy"></div>
+              <div class="frame"><img src="images/assembly-1.jpg" width="1599" height="705" alt="Backyard 2 and Porch 2 glued to the adjacent details" loading="lazy"></div>
+            </div>
+          </div>
+
+          <div class="step" id="step-3">
+            <span class="badge">03</span><h3>Place the 1st floor walls</h3>
+            <button class="done-btn mini" data-done="step-3" aria-pressed="false" aria-label="Mark step 3 as done">✓</button>
+            <p>Then, attach the right and left walls, make sure you spread the glue on both the bottom and the side attached to the back wall. Place the 1st floor interior wall on the guidance line on the Floor 1 spreading glue on both the bottom and the side attached to the back wall. Make sure the interior decor colors are aligned.</p>
+            <div class="frame"><img src="images/step-3.jpg" width="799" height="466" alt="Side walls and inner wall 1 glued to the floor, with a close-up of inner wall 1" loading="lazy"><p class="note">Make sure the green decor is facing this way</p></div>
+          </div>
+          <div class="step" id="step-4">
+            <span class="badge">04</span><h3>Fit in the 2nd floor and the balcony</h3>
+            <button class="done-btn mini" data-done="step-4" aria-pressed="false" aria-label="Mark step 4 as done">✓</button>
+            <p>Then, place the 2nd Floor detail, using the guidance lines on the Right wall, Left wall and Back wall spread the glue on 3 respective sides of the 2nd floor detail. Place the detail on top of the Inner wall 1 carefully sliding it tightly towards the back wall. Make sure that the decor is facing upwards. In a same manner fit in the Balcony detail as shown on the image.</p>
+            <div class="frame"><img src="images/assembly-2.jpg" width="1599" height="933" alt="The 2nd floor slab slid into place over inner wall 1" loading="lazy"></div>
+          </div>
+
+          <div class="step" id="step-5">
+            <span class="badge">05</span><h3>Place the inner wall 2</h3>
+            <button class="done-btn mini" data-done="step-5" aria-pressed="false" aria-label="Mark step 5 as done">✓</button>
+            <p>Place the inner wall 2 on the guidance line on the Floor 2 detail. Spread glue on both the bottom and the side attached to the back wall.</p>
+            <div class="frame"><img src="images/assembly-3.jpg" width="1600" height="957" alt="Inner wall 2 glued to the second floor, with a close-up" loading="lazy"></div>
+          </div>
+          <div class="step" id="step-6">
+            <span class="badge">06</span><h3>Fit the roof</h3>
+            <button class="done-btn mini" data-done="step-6" aria-pressed="false" aria-label="Mark step 6 as done">✓</button>
+            <p>Finally, spread glue on the top rib of the right wall, left wall and the inner 2 wall, place both roof details on top of the walls as shown on the image. Add glue at the meeting point of 2 roof details as well. Wait approximately 10-15 minutes for the whole structure to dry.</p>
+            <div class="frame"><img src="images/assembly-3.jpg" width="1600" height="957" alt="Both roof panels placed on top of the walls" loading="lazy"></div>
+          </div>
+        </section>
+
+        <section class="block" id="finishing">
+          <p class="eyebrow">05 / Finishing touches</p>
+          <h2 class="sec">Make it your own</h2>
+          <p class="sub">Keep the core shell reusable. Add colour, paper, textiles and small details once the fit has been tested.</p>
+          <div class="two">
+            <div class="card">
+              <h3>Add furniture and details</h3>
+              <p>Using linked templates and tutorials below feel free to further decorate the house with hand-made furniture. Keep pieces movable and avoid tiny fragile details if the house will be handled often.</p>
+            </div>
+            <div class="card">
+              <h3>Test before the play</h3>
+              <p>Check that all the parts have been glued thoroughly and reinforce parts with kraft masking tape where necessary. Verify the house stays stable during handling and only then proceed to use it for play.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <!-- Right-hand bar: stays in view while the page scrolls -->
+      <aside class="rail" aria-label="Project progress">
+        <div class="panel">
+          <div class="progress-head"><h3>Your progress</h3><span id="progressText">0/10 steps</span></div>
+          <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="progressBar"><i id="progressFill"></i></div>
+          <h4>In this project</h4>
+          <ol class="steps-nav" id="stepsNav">
+            <li><a href="#materials" data-step="materials"><span class="n">01</span>Materials &amp; tools</a></li>
+            <li><a href="#print" data-step="print"><span class="n">02</span>Printing templates</a></li>
+            <li><a href="#cut" data-step="cut"><span class="n">03</span>Cut the parts</a></li>
+            <li><a href="#decor" data-step="decor"><span class="n">04</span>Attach decor</a></li>
+            <li><a href="#step-1" data-step="step-1"><span class="n">05</span>Build the base</a></li>
+            <li><a href="#step-2" data-step="step-2"><span class="n">06</span>Install side walls</a></li>
+            <li><a href="#step-3" data-step="step-3"><span class="n">07</span>Place 1st floor walls</a></li>
+            <li><a href="#step-4" data-step="step-4"><span class="n">08</span>Fit in floor 2 slabs</a></li>
+            <li><a href="#step-5" data-step="step-5"><span class="n">09</span>Place inner wall 2</a></li>
+            <li><a href="#step-6" data-step="step-6"><span class="n">10</span>Fit in roof</a></li>
+          </ol>
+        </div>
+        <div class="cta">
+          <h4>Ready to make?</h4>
+          <p>Keep the cutting guide beside you while you work. Print at 100% for full-size patterns</p>
+          <a class="btn" href="#templates">View project files</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p class="foot-brand">THE MAKERS EDIT</p>
+      <p class="foot-note">A little world, built by you.  ·  Made to be followed, built and played with.</p>
+      <a class="newsletter" href="#">Newsletters</a>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <ul class="caps"><li><a href="#">DIY-Projects</a></li><li><a href="#">Needlecrafts</a></li><li><a href="#">Paper Crafts</a></li><li><a href="#">Hobbies</a></li></ul>
+      <ul class="caps"><li><a href="#">Kids</a></li><li><a href="#">Beadwork</a></li><li><a href="#">By Category</a></li><li><a href="#">Free templates</a></li></ul>
+      <ul><li><a href="#">About us</a></li><li><a href="#">Careers</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Privacy Policy</a></li></ul>
+      <ul class="narrow"><li><a href="#">Editorial Guidelines</a></li><li><a href="#">Contact Us</a></li><li><a href="#">Advertise</a></li></ul>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var KEY='dollhouse-guide-v1';
+  var MATERIALS=['2-3mm solid kraft cardboard','Cutter knife + spare blades','Template printouts on an A3 paper','Metal ruler','Cardboard glue','Cutting mat','Stick glue','Scissors','Masking tape','Pencil + eraser'];
+  var STEPS=['materials','print','cut','decor','step-1','step-2','step-3','step-4','step-5','step-6'];
+
+  // state is saved in the visitor's own browser; works even if storage is blocked
+  var state={mat:{},done:{}};
+  try{var s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&s.mat&&s.done)state=s}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+
+  // materials checklist
+  var list=document.getElementById('materialsList');
+  MATERIALS.forEach(function(text,i){
+    var l=document.createElement('label');l.className='check';
+    l.innerHTML='<input type="checkbox"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span class="t"></span>';
+    l.querySelector('.t').textContent=text;
+    var cb=l.querySelector('input');cb.checked=!!state.mat[i];
+    cb.addEventListener('change',function(){state.mat[i]=cb.checked;save()});
+    list.appendChild(l);
+  });
+
+  // progress
+  var nav=document.getElementById('stepsNav');
+  function render(){
+    var n=0;
+    STEPS.forEach(function(id){
+      var d=!!state.done[id];if(d)n++;
+      var a=nav.querySelector('[data-step="'+id+'"]');if(a)a.classList.toggle('done',d);
+      var b=document.querySelector('[data-done="'+id+'"]');
+      if(b){b.setAttribute('aria-pressed',d);if(!b.classList.contains('mini'))b.textContent=d?'✓ Done':'Mark as done';
+        var st=b.closest('.step');if(st)st.classList.toggle('is-done',d)}
+    });
+    document.getElementById('progressText').textContent=n+'/10 steps';
+    document.getElementById('progressFill').style.width=(n*10)+'%';
+    document.getElementById('progressBar').setAttribute('aria-valuenow',n);
+  }
+  document.querySelectorAll('[data-done]').forEach(function(b){
+    b.addEventListener('click',function(){var id=b.getAttribute('data-done');state.done[id]=!state.done[id];save();render()});
+  });
+  render();
+
+  // highlight the step that is currently on screen
+  if('IntersectionObserver' in window){
+    var links={};nav.querySelectorAll('a').forEach(function(a){links[a.dataset.step]=a});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){
+        Object.keys(links).forEach(function(k){links[k].classList.remove('active')});
+        var a=links[e.target.id];if(a)a.classList.add('active');
+      }});
+    },{rootMargin:'-20% 0px -65% 0px'});
+    STEPS.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }
+
+  // menu button (mobile / hamburger)
+  var mb=document.getElementById('menuBtn'),dr=document.getElementById('drawer');
+  mb.addEventListener('click',function(){var o=dr.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+})();
+</script>
+</body>
+</html>
